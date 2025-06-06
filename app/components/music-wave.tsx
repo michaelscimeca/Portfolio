@@ -5,6 +5,8 @@ import { gsap } from "gsap";
 
 export default function MusicWave() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const circle = useRef<HTMLCanvasElement>(null);
+
   const animationIdRef = useRef<number | undefined>(undefined);
   const [isPlaying, setIsPlaying] = useState(false);
   const soundRef = useRef<HTMLAudioElement | null>(null);
@@ -36,7 +38,7 @@ export default function MusicWave() {
     if (!canvas) return;
 
     // Canvas dimensions
-    const width = 25;
+    const width = 10;
     const height = 50;
 
     const opt = {
@@ -46,7 +48,7 @@ export default function MusicWave() {
       points: 20,
       stretch: 30,
       sinheight: 0,
-      speed: 0.1,
+      speed: 0.08,
       strokeColor: 'white',
       strokeWidth: 1.5,
       power: false,
@@ -128,12 +130,12 @@ export default function MusicWave() {
       }
     };
 
-    canvas.addEventListener('click', handleCanvasClick);
+    circle.current.addEventListener('click', handleCanvasClick);
     render();
 
     // Cleanup function
     return () => {
-      canvas.removeEventListener('click', handleCanvasClick);
+      circle.current?.removeEventListener('click', handleCanvasClick);
       if (animationIdRef.current) {
         cancelAnimationFrame(animationIdRef.current);
       }
@@ -170,14 +172,11 @@ export default function MusicWave() {
 
   return (
     <div className="relative flex flex-col items-center space-y-4">
-      <div className="text-center">
-      
+        <div className="circle-container" ref={circle} >
         <canvas 
           ref={canvasRef} 
-          
-          style={{ width: '25px', height: '50px' }}
         />
-      </div>
+        </div>
     </div>
   );
 }

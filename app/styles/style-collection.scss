@@ -1,1 +1,3 @@
-@import 'home'; // notice: no leading underscore, no ".scss" extension
+@use 'home';
+@use './components/logo-section';
+@use './components/music-wave';
