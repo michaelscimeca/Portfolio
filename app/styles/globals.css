@@ -60,6 +60,9 @@ body {
 .grid-item {
     height: 200px;
     border-left: 1px solid rgba(253, 253, 253, 0.986);
+    span {
+        width: 100%;
+    }
 }
 
 

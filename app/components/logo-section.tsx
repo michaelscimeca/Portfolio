@@ -1,6 +1,8 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import HoverSound from './wrapper/hover-sound';
+
 
 export default function logoSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -126,7 +128,7 @@ export default function logoSection() {
         highlight.style.pointerEvents = 'none';
         highlight.style.zIndex = '-1';
       }
-      
+
       // Set cleanup function for mobile styles
       cleanup = () => {
         gridItems?.forEach((item) => {
@@ -154,7 +156,7 @@ export default function logoSection() {
       <div className="highlight" ref={highlightRef}></div>
       <div className="grid">
         <div className="grid-row">
-          <div className="grid-item">
+          <HoverSound className="hover-sound-wrapper">
             <div className="slide-image">
               <span className="image-wrap">
                 {/* FRONT image (visible initially) */}
@@ -173,157 +175,166 @@ export default function logoSection() {
                   height={60}
                 />
               </span>
+
             </div>
-          </div>
-          <div className="grid-item">
+          </HoverSound>
+
+          <HoverSound className="hover-sound-wrapper">
             <div className="slide-image">
               <span className="image-wrap">
                 {/* FRONT image (visible initially) */}
                 <Image
                   src={logoFiles[logoMapping[1]]}
                   alt={logoNames[logoMapping[1]]}
-                  width={160}
-                  height={60}
+                  width={200}
+                  height={70}
                 />
 
                 {/* BACK image (slides up on hover) */}
                 <Image
                   src={logoFiles[logoMapping[1]]}
                   alt={logoNames[logoMapping[1]]}
-                  width={180}
+                  width={200}
                   height={60}
                 />
               </span>
+
             </div>
-          </div>
-          <div className="grid-item">
+          </HoverSound>
+          <HoverSound className="hover-sound-wrapper">
             <div className="slide-image">
               <span className="image-wrap">
                 {/* FRONT image (visible initially) */}
                 <Image
                   src={logoFiles[logoMapping[2]]}
                   alt={logoNames[logoMapping[2]]}
-                  width={160}
-                  height={60}
+                  width={200}
+                  height={70}
                 />
 
                 {/* BACK image (slides up on hover) */}
                 <Image
                   src={logoFiles[logoMapping[2]]}
                   alt={logoNames[logoMapping[2]]}
-                  width={160}
+                  width={200}
                   height={60}
                 />
               </span>
+
             </div>
-          </div>
+          </HoverSound>
         </div>
         <div className="grid-row">
-          <div className="grid-item">
-            <div className="slide-image">
-              <span className="image-wrap">
-                {/* FRONT image (visible initially) */}
-                <Image
-                  src={logoFiles[logoMapping[4]]}
-                  alt={logoNames[logoMapping[4]]}
-                  width={85}
-                  height={60}
-                />
-
-                {/* BACK image (slides up on hover) */}
-                <Image
-                  src={logoFiles[logoMapping[4]]}
-                  alt={logoNames[logoMapping[4]]}
-                  width={85}
-                  height={60}
-                />
-              </span>
-            </div>
-          </div>
-          <div className="grid-item">
-            <div className="slide-image">
-              <span className="image-wrap">
-                {/* FRONT image (visible initially) */}
-                <Image
-                  src={logoFiles[logoMapping[5]]}
-                  alt={logoNames[logoMapping[5]]}
-                  width={70}
-                  height={60}
-                />
-
-                {/* BACK image (slides up on hover) */}
-                <Image
-                  src={logoFiles[logoMapping[5]]}
-                  alt={logoNames[logoMapping[5]]}
-                  width={70}
-                  height={60}
-                />
-              </span>
-            </div>
-          </div>
-          <div className="grid-item">
-            <div className="slide-image">
-              <span className="image-wrap">
-                {/* FRONT image (visible initially) */}
-                <Image
-                  src={logoFiles[logoMapping[6]]}
-                  alt={logoNames[logoMapping[6]]}
-                  width={95}
-                  height={60}
-                />
-
-                {/* BACK image (slides up on hover) */}
-                <Image
-                  src={logoFiles[logoMapping[6]]}
-                  alt={logoNames[logoMapping[6]]}
-                  width={95}
-                  height={60}
-                />
-              </span>
-            </div>
-          </div>
-          <div className="grid-item">
-            <div className="slide-image">
-              <span className="image-wrap">
-                {/* FRONT image (visible initially) */}
-                <Image
-                  src={logoFiles[logoMapping[7]]}
-                  alt={logoNames[logoMapping[7]]}
-                  width={120}
-                  height={60}
-                />
-
-                {/* BACK image (slides up on hover) */}
-                <Image
-                  src={logoFiles[logoMapping[7]]}
-                  alt={logoNames[logoMapping[7]]}
-                  width={120}
-                  height={60}
-                />
-              </span>
-            </div>
-          </div>
-          <div className="grid-item">
+          <HoverSound className="hover-sound-wrapper">
             <div className="slide-image">
               <span className="image-wrap">
                 {/* FRONT image (visible initially) */}
                 <Image
                   src={logoFiles[logoMapping[3]]}
                   alt={logoNames[logoMapping[3]]}
-                  width={80}
-                  height={60}
+                  width={200}
+                  height={70}
                 />
 
                 {/* BACK image (slides up on hover) */}
                 <Image
                   src={logoFiles[logoMapping[3]]}
                   alt={logoNames[logoMapping[3]]}
-                  width={80}
+                  width={200}
                   height={60}
                 />
               </span>
+
             </div>
-          </div>
+          </HoverSound>
+          <HoverSound className="hover-sound-wrapper">
+            <div className="slide-image">
+              <span className="image-wrap">
+                {/* FRONT image (visible initially) */}
+                <Image
+                  src={logoFiles[logoMapping[4]]}
+                  alt={logoNames[logoMapping[4]]}
+                  width={200}
+                  height={70}
+                />
+
+                {/* BACK image (slides up on hover) */}
+                <Image
+                  src={logoFiles[logoMapping[4]]}
+                  alt={logoNames[logoMapping[4]]}
+                  width={200}
+                  height={60}
+                />
+              </span>
+
+            </div>
+          </HoverSound>
+          <HoverSound className="hover-sound-wrapper">
+            <div className="slide-image">
+              <span className="image-wrap">
+                {/* FRONT image (visible initially) */}
+                <Image
+                  src={logoFiles[logoMapping[5]]}
+                  alt={logoNames[logoMapping[5]]}
+                  width={200}
+                  height={70}
+                />
+
+                {/* BACK image (slides up on hover) */}
+                <Image
+                  src={logoFiles[logoMapping[5]]}
+                  alt={logoNames[logoMapping[5]]}
+                  width={200}
+                  height={60}
+                />
+              </span>
+
+            </div>
+          </HoverSound>
+          <HoverSound className="hover-sound-wrapper">
+            <div className="slide-image">
+              <span className="image-wrap">
+                {/* FRONT image (visible initially) */}
+                <Image
+                  src={logoFiles[logoMapping[6]]}
+                  alt={logoNames[logoMapping[6]]}
+                  width={200}
+                  height={70}
+                />
+
+                {/* BACK image (slides up on hover) */}
+                <Image
+                  src={logoFiles[logoMapping[6]]}
+                  alt={logoNames[logoMapping[6]]}
+                  width={200}
+                  height={60}
+                />
+              </span>
+
+            </div>
+          </HoverSound>
+          <HoverSound className="hover-sound-wrapper">
+            <div className="slide-image">
+              <span className="image-wrap">
+                {/* FRONT image (visible initially) */}
+                <Image
+                  src={logoFiles[logoMapping[7]]}
+                  alt={logoNames[logoMapping[7]]}
+                  width={200}
+                  height={70}
+                />
+
+                {/* BACK image (slides up on hover) */}
+                <Image
+                  src={logoFiles[logoMapping[7]]}
+                  alt={logoNames[logoMapping[7]]}
+                  width={200}
+                  height={60}
+                />
+              </span>
+
+            </div>
+          </HoverSound>
         </div>
       </div>
     </div>
