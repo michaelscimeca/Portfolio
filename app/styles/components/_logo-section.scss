@@ -57,11 +57,12 @@
     object-fit: contain;
     height: 50%;
     pointer-events: none;
+    width: 100%;
 }
 
 .slide-image {
     display: inline-block;
-    height: 60px;
+    height: 70px;
     overflow: hidden;
     text-decoration: none;
 }
